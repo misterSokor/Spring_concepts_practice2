@@ -1,22 +1,18 @@
 package com.example.dao.impl;
 
 import com.example.dao.ProductDao;
-import com.example.lib.Dao;
-import com.example.lib.InjectConstructor;
 import com.example.model.Product;
+import com.example.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
 import java.util.List;
 
-@Dao
-public class ProductDaoImpl extends AbstractDao implements ProductDao {
-    @InjectConstructor
-    public ProductDaoImpl(SessionFactory sessionFactory) {
-        super(sessionFactory);
-    }
-
+@Repository
+public class ProductDaoImpl implements ProductDao {
+    SessionFactory factory = HibernateUtil.getSessionFactory();
     @Override
     public Product save(Product product) {
         Session session = null;

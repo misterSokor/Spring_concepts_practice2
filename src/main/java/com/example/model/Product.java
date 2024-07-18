@@ -1,7 +1,5 @@
 package com.example.model;
 
-import com.example.lib.Inject;
-import com.example.lib.InjectConstructor;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,16 +13,15 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Inject
+
     private String name;
-    @Inject
+
     private BigDecimal price;
 
-    @InjectConstructor
+
     public Product() {
     }
 
-    @InjectConstructor
     public Product(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
