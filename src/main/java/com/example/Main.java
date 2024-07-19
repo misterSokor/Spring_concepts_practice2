@@ -20,6 +20,7 @@ public class Main {
         Product iphone = new Product("iPhone", BigDecimal.valueOf(1000));
 
         Product samsung = new Product("Samsung", BigDecimal.valueOf(800));
+        Product xiaomi = new Product("Xiaomi", BigDecimal.valueOf(500));
 
 //        ProductService productService =
 //                (ProductService) Injector.getInstance(ProductService.class);
@@ -29,6 +30,7 @@ public class Main {
 
         productService.save(iphone);
         productService.save(samsung);
+        productService.save(xiaomi);
 
         System.out.println(productService.findAll());
     }
